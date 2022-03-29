@@ -4,7 +4,7 @@ node{
      checkout scm		
    }	
    stage('Build image'){
-     docker.build('examplePy/node-demo-app')
+     docker.build('test:v1')
    }
    stage('Test'){
      app.inside{
