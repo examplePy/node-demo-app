@@ -7,6 +7,8 @@ node{
      docker.build('test:v1')
    }
    stage('Test'){
-     sh 'docker run test:v1 npm run test'
+     steps{
+	sh 'node --version'
+     }
    }
 }
