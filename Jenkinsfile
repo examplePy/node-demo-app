@@ -4,11 +4,12 @@ node{
      checkout scm		
    }	
    stage('Build image'){
-     docker.build('test:v1')
+     app=docker.build('test:v1')
    }
    stage('Test'){
-     steps{
-	sh 'node --version'
-     }
+     app.inside{
+        sh 'npm install'
+        sh 'npm test'
+     }  
    }
 }
