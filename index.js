@@ -20,7 +20,7 @@ con.connect(function(err){
 app.get('/', function (req, res) {
   // create table if not exist
   con.query('INSERT INTO visits (ts) values (?)', Date.now(),function(err, dbRes) {
-    if(err) throw err;
+    if(err) throw err;;
     res.send('Hello World! You are visitor number '+dbRes.insertId);
   });
 });
