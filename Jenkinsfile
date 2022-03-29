@@ -9,7 +9,6 @@ node{
    stage('Test'){
      app.inside{
         sh 'npm install'
-        sh 'npm test'
      }  
    }
 }
