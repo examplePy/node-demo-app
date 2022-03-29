@@ -7,9 +7,6 @@ node{
      docker.build('test:v1')
    }
    stage('Test'){
-     nodejs(nodeInstallationName:'nodejs'){
-     sh 'npm install'
-     sh 'npm test'
+     sh 'docker run test:v1 npm run test'
    }
-
 }
